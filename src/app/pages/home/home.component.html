@@ -1,0 +1,23 @@
+<app-header />
+<app-filter-categories (categorySelected)="onCategorySelected($event)" />
+<div class="home-container">
+  <div class="card-container">
+    <app-product *ngFor="let product of products$ | async" [product]="product"/>
+  </div>
+
+  <div class="cart" *ngIf="!isMobile">
+    <app-cart />
+  </div>
+
+  <div class="cart-modal" *ngIf="showCartModal">
+    <div class="cart-modal-content">
+      <button class="close-modal" (click)="toggleCartModal()">✖️</button>
+      <app-cart />
+    </div>
+  </div>
+</div>
+
+<button class="floating-cart-button" *ngIf="isMobile" (click)="toggleCartModal()">
+  🛒
+</button>
+

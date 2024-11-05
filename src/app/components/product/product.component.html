@@ -1,0 +1,14 @@
+
+<div class="card">
+  <div class="image-container">
+    <img [src]="product.image" class="product-image" />
+  </div>
+  <div class="product-info">
+    <h3 class="product-title">{{  product.title }}</h3>
+    <div class="product-price-add">
+      <p class="product-price">{{ product.price | currency: 'EUR' }}</p>
+      <button class="add-button" (click)="addProductToCart(product)" >Añadir</button>
+    </div>
+
+  </div>
+</div>

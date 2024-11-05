@@ -1,0 +1,149 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #000000;
+  color: #fff;
+  height: 8vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+}
+
+
+.menu-left, .menu-right {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-left button,
+.menu-right .dropdown-toggle {
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.username {
+  margin-right: 5px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.option-admin{margin-left: 20px;}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #444;
+  color: #fff;
+  padding: 5px;
+  min-width: 15vw;
+  cursor: pointer !important;
+  p{
+    text-align: center;
+
+  }
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  cursor: pointer !important;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #000000;
+  color: #fff;
+  height: 8vh;
+}
+
+
+.menu-icon {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.9rem;
+  color: #fff;
+  cursor: pointer;
+  margin-left: auto
+
+}
+
+
+.menu-left,
+.menu-right {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #444;
+  color: #fff;
+  padding: 5px;
+  min-width: 15vw;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.logout-option{
+  display: none;
+}
+
+
+@media (max-width: 848px) {
+
+  .menu-left,
+  .menu-right {
+    display: none;
+    flex-direction: column;
+    background-color: #000000;
+    width: 100%;
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    padding: 10px 0;
+    p{
+      margin: 5px 0;
+    }
+  }
+
+  .menu-open {
+    display: flex;
+  }
+  .logout-option{
+    display: block;
+  }
+
+
+  .menu-icon {
+    display: block;
+  }
+}

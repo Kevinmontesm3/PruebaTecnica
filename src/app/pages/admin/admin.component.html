@@ -1,0 +1,39 @@
+<app-header />
+<div class="admin-container">
+  <form [formGroup]="searchForm" class="search-bar">
+    <input type="text" placeholder="Search product" formControlName="searchTerm">
+    <button *ngIf="authService.isAdmin() && authService.isAdminInLogrono()" type="button" class="create-product-btn" (click)="createProduct()">+ Create product</button>
+  </form>
+
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th *ngIf="authService.isAdmin() && authService.isAdminInMadrid()">Actions</th>
+        <th>Product</th>
+        <th>Category</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of displayedProducts$ | async">
+        <td class="actions" *ngIf="authService.isAdmin() && authService.isAdminInMadrid()" >
+          <p class="delete-icon" (click)="deleteProduct(product.id)">
+            🗑️
+          </p>
+        </td>
+        <td class="product-info">
+          <img [src]="product.image" alt="{{ product.title }}" class="product-image">
+          <span class="product-title">{{ product.title }}</span>
+        </td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.price | currency:'EUR' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<app-header/>
+<div class="add-product-container">
+  <h2>Create product</h2>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form">
+
+    <label>Product name</label>
+    <input type="text" formControlName="title" placeholder="Write the name" />
+
+    <label>Date of manufacture</label>
+    <div class="input-group">
+      <input type="date" formControlName="manufactureDate" />
+    </div>
+
+    <label>Price</label>
+    <input type="number" formControlName="price" placeholder="€ 0.0" />
+
+    <label>Select category</label>
+    <select formControlName="category">
+      <option value="" disabled selected>Category</option>
+      <option *ngFor="let category of categories$ | async" [value]="category">
+        {{ category | capitalize }}
+      </option>
+    </select>
+
+    <label>Description</label>
+    <textarea formControlName="description" class="description" placeholder="Enter a description"></textarea>
+
+
+    <label>Product photo</label>
+    <div class="image-upload">
+      <input type="file" (change)="onImageSelected($event)" />
+      <div class="placeholder" *ngIf="!imagePreviewUrl">
+        <span class="image-icon">📷</span>
+      </div>
+      <img *ngIf="imagePreviewUrl" [src]="imagePreviewUrl" alt="Image Preview" class="image-preview" />
+    </div>
+
+    <button type="submit" class="submit-button">Create product</button>
+  </form>
+</div>

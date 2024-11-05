@@ -1,0 +1,136 @@
+.add-product-container{
+  margin-top: 8vh !important;
+}
+
+.add-product-container {
+  max-width: 700px;
+  margin: 8vh auto 0;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-form label {
+  font-size: 0.9em;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.product-form input[type="text"],
+.product-form input[type="number"],
+.product-form input[type="date"],
+.product-form select {
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.currency-symbol {
+  padding-left: 8px;
+  font-size: 1.2em;
+  color: #666;
+}
+
+.image-upload {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.image-upload input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.placeholder {
+  width: 100px;
+  height: 100px;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+}
+
+.image-icon {
+  font-size: 2em;
+  color: #999;
+}
+
+.submit-button {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #303f9f;
+}
+.image-upload {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.image-upload input[type="file"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.placeholder {
+  width: 100px;
+  height: 100px;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+}
+
+.image-icon {
+  font-size: 2em;
+  color: #999;
+}
+
+.image-preview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+h2{
+  margin-bottom: 2rem;
+}
+.description{
+  margin-bottom: 1rem;
+  resize: none;
+  padding: 8px;
+  border-radius: 4px;
+}

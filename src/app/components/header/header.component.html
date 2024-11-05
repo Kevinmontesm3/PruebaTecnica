@@ -1,0 +1,26 @@
+<nav class="navbar">
+
+  <button class="menu-icon" (click)="toggleMenu()">
+    &#9776;
+  </button>
+
+  <div [ngClass]="{'menu-left': true, 'menu-open': isMenuOpen}">
+    <p (click)="goTo('/home')">List</p>
+
+    <p *ngIf="isAdmin" class="option-admin" (click)="goTo('/admin')">Admin</p>
+
+    <p (click)="logout()" class="logout-option">Cerrar sesión</p>
+  </div>
+
+  <div *ngIf="user">
+    <div class="menu-right" *ngIf="user.username">
+      <span class="username">{{ user.username }}</span>
+      <div class="dropdown">
+        <button class="dropdown-toggle">▼</button>
+        <div class="dropdown-menu">
+          <p (click)="logout()">Cerrar sesión</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,9 @@
+<div class="category-filter">
+  <label for="categorySelect">Filter by category:</label>
+  <select id="categorySelect" (change)="selectCategory($event)">
+    <option *ngIf="selectedCategory === null" [value]="''" disabled selected>Select a category</option>
+    <option *ngFor="let category of categories$ | async" [value]="category">
+      {{ category | capitalize}}
+    </option>
+  </select>
+</div>

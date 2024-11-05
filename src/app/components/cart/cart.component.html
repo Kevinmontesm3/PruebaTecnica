@@ -1,0 +1,41 @@
+<div class="cart">
+  <div class="cart-container">
+    <h2>Carrito</h2>
+    <hr>
+    <ul class="cart-items" *ngIf="cartItems.length > 0;else emptyCart">
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <img [src]="item.image" alt="{{ item.title }}">
+
+        <div class="item-info">
+          <div class="item-title">{{ item.title }}</div>
+
+          <!-- Controles de cantidad -->
+          <div class="quantity-controls">
+            <button class="quantity-button" (click)="decreaseQuantity(item)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button class="quantity-button" (click)="increaseQuantity(item)">+</button>
+          </div>
+        </div>
+
+        <!-- Precio del item -->
+        <div class="item-price">{{ item.price * (item.quantity || 1) | currency:'EUR' }}</div>
+
+        <!-- Botón de eliminar -->
+        <button class="remove-item" (click)="removeProduct(item)">🗑️</button>
+      </div>
+      <button class="add-button remove-button" (click)="clearCart()">Empty cart</button>
+    </ul>
+    <ng-template #emptyCart>
+     <p  class="emptyCart">🛒 Empty cart</p>
+    </ng-template>
+    <div *ngIf="cartItems.length > 0" class="cart-footer" >
+      <div class="cart-total">
+        <div class="add-button total">
+          <div>Total : {{ total | currency:'EUR' }}</div>
+          <div> | {{getTotalQuantity()}} products</div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
